@@ -21,7 +21,7 @@ function timeDifference(dateStr) {
     return `${years ? years + '年':''}${days}天${hours}时${minutes}分${seconds}秒`;
 }
 document.querySelector('#time').innerHTML = timeDifference('2024-09-26 16:55:00')
-document.title="给世界第一可爱的六一"
+document.title="献给世界第一可爱的六一"
 setInterval(()=>{
     document.querySelector('#time').innerHTML = timeDifference('2024-09-26 16:55:00')
 }, 1000)
