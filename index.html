@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><title>JyQAQ</title></head><body><div id=app></div><script id=sakura_point_vsh type=x-shader/x_vertex>uniform mat4 uProjection;
+<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><title>给世界第一可爱的六一</title><style>p { font-weight: bold }</style></head><body><div id=app></div><script id=sakura_point_vsh type=x-shader/x_vertex>uniform mat4 uProjection;
 uniform mat4 uModelview;
 uniform vec3 uResolution;
 uniform vec3 uOffset;
@@ -253,4 +253,29 @@ void main(void) {
 
     gl_FragColor = vec4(col.rgb, 1.0);
     gl_FragColor.a = 1.0;
-}</script><script src=./js/app.56b24699a07f9d835e1b.js?56b24699a07f9d835e1b></script></body></html>
+}</script><script src=./js/app.56b24699a07f9d835e1b.js?56b24699a07f9d835e1b></script><script type="application/javascript">
+    function timeDifference(dateStr) {
+        const endDate = new Date(dateStr); // 结束日期
+        const now = new Date(); // 当前日期
+        let diff = now - endDate; // 时间差（毫秒）
+        // 计算差值的年、天、小时、分钟和秒
+        let years = 0, days = 0, hours = 0, minutes = 0, seconds = 0;
+        if (diff >= 0) {
+            years = Math.floor(diff / (365 * 24 * 60 * 60 * 1000));
+            diff -= years * 365 * 24 * 60 * 60 * 1000;
+            days = Math.floor(diff / (24 * 60 * 60 * 1000));
+            diff -= days * 24 * 60 * 60 * 1000;
+            hours = Math.floor(diff / (60 * 60 * 1000));
+            diff -= hours * 60 * 60 * 1000;
+            minutes = Math.floor(diff / (60 * 1000));
+            diff -= minutes * 60 * 1000;
+            seconds = Math.floor(diff / 1000);
+        }
+        return `${years ? years + '年':''}${days}天${hours}时${minutes}分${seconds}秒`;
+    }
+    document.querySelector('#time').innerHTML = timeDifference('2024-09-26 16:55:00')
+    setInterval(()=>{
+        document.querySelector('#time').innerHTML = timeDifference('2024-09-26 16:55:00')
+    }, 1000)
+
+</script></body></html>
